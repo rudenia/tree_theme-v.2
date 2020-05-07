@@ -11,10 +11,11 @@ $cost = '0';
 		<div class="wrapper">
 
             <?php while ( have_posts() ) :	the_post(); ?>
+
 			<div class="inner__content">
 				<h2 class="inner__title inner-title"><span><?php the_title(); ?></h2>
 				<div class="inner__img blue-noise">
-					<?php echo get_the_post_thumbnail(get_the_ID(), 'full'); ?>
+					<?php echo get_the_post_thumbnail(get_the_ID(), 'service-checkout'); ?>
 				</div>
 				<div class="inner__block">
 					<div class="inner__text">

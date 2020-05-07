@@ -85,6 +85,7 @@ if ( ! function_exists( 'tree_theme_setup' ) ) :
 		//Size for images
 		add_image_size( 'testimonial-thumb', 225, 231, true );
 		add_image_size( 'service-thumb', 1170, 635, true );
+		add_image_size( 'service-checkout', 1170, 554, true );
 	}
 endif;
 add_action( 'after_setup_theme', 'tree_theme_setup' );
