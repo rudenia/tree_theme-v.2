@@ -20,7 +20,9 @@
 						</div>
 						<div class="inner__text">
                             <?php the_content(); ?>
-							<a href="<?php echo home_url("/"). '/order/?price'.get_metadata('post', get_the_ID(), 'tree_theme_service_price', true); ?>" class="inner__btn btn">Заказать</a>
+                            <?php $price = get_metadata('post', get_the_ID(), 'tree_theme_service_price', true);
+                            ?>
+							<a href="<?php echo home_url("/"). '/checkout/?price='.$price.'&title='.get_the_title().'&content='.get_the_content();?>" class="inner__btn btn">Заказать</a>
 						</div>
 					</div>
 			<?php endwhile; ?>

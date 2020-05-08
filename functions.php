@@ -85,7 +85,8 @@ if ( ! function_exists( 'tree_theme_setup' ) ) :
 		//Size for images
 		add_image_size( 'testimonial-thumb', 225, 231, true );
 		add_image_size( 'service-thumb', 1170, 635, true );
-		add_image_size( 'service-checkout', 1170, 554, true );
+		add_image_size( 'service-thumb', 1170, 554, true );
+		add_image_size( 'feature-thumb', 438, 455, true );
 	}
 endif;
 add_action( 'after_setup_theme', 'tree_theme_setup' );
@@ -352,6 +353,24 @@ function aletheme_metaboxes($meta_boxes) {
 				'name' => 'Price',
 				'desc' => 'Insert price for this service',
 				'id'   => $prefix . 'service_price',
+				'type' => 'text',
+			),
+		)
+	);
+
+	$meta_boxes[] = array(
+		'id'         => 'checkout_metaboxes',
+		'title'      => 'Data for checkout page',
+		'pages'      => array( 'page', ), // Post type
+		'context'    => 'normal',
+		'priority'   => 'high',
+		'show_names' => true, // Show field names on the left
+		'show_on'    => array( 'key' => 'page-template', 'value' => array('template-order.php'), ), // Specific post templates to display this metabox
+		'fields' => array(
+			array(
+				'name' => 'Form Shothcode',
+				'desc' => 'Install plugin Contact 7 and put shortcode form',
+				'id'   => $prefix . 'shortcode_checkout',
 				'type' => 'text',
 			),
 		)
