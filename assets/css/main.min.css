@@ -1407,7 +1407,7 @@ button {
   display: -ms-flexbox;
   display: flex;
   height: 53px;
-  width: 494px;
+  min-width: 494px;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 5px 30px rgba(206, 218, 228, 0.6);

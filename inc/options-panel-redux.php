@@ -561,6 +561,30 @@
 				'title'     => esc_html__( 'Specify for Currency', 'tree_theme' ),
 				'default'   => '$',
 			),
+			array(
+				'id'        => 'cases_label',
+				'type'      => 'text',
+				'title'     => esc_html__( 'Title for sliders from cases', 'tree_theme' ),
+				'default'   => 'Посмотрите наши последние кейсы',
+			),
+			array(
+				'id'        => 'service_archive_title1',
+				'type'      => 'text',
+				'title'     => esc_html__( 'First part title page service', 'tree_theme' ),
+				'default'   => 'Наши',
+			),
+			array(
+				'id'        => 'service_archive_title2',
+				'type'      => 'text',
+				'title'     => esc_html__( 'Second part title page service', 'tree_theme' ),
+				'default'   => 'Услуги',
+			),
+			array(
+				'id'        => 'service_archive_description',
+				'type'      => 'textarea',
+				'title'     => esc_html__( 'Description page service ', 'tree_theme' ),
+				'default'   => 'Вы хотите реализовать свои бизнес идеи? Начало вашего нового бизнеса требует прочной юридической основы, и мы поможем вам на каждом этапе',
+			),
 		)
 	) );
 

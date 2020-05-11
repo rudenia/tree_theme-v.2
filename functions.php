@@ -220,7 +220,7 @@ function tree_theme_body_class( $classes ) {
 
 
 /**
- * Register a custom post type for Testimonial
+ * Register a custom post type
  *
  */
 function tree_theme_register_custom_post_type () {
@@ -302,9 +302,22 @@ function tree_theme_register_custom_post_type () {
         'menu_icon'          => 'dashicons-portfolio',
         'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
     ) );
+
+    // Register Taxonomy
+
+	register_taxonomy(
+		'service-type',
+		'service',
+		array(
+			'label' => __( 'Service Type' ),
+			'rewrite' => array( 'slug' => 'service-type' ),
+			'hierarchical' => true,
+		)
+	);
 }
  
 add_action( 'init', 'tree_theme_register_custom_post_type' );
+
 
 /**
  * Add Metaboxes
@@ -354,6 +367,20 @@ function aletheme_metaboxes($meta_boxes) {
 				'desc' => 'Insert price for this service',
 				'id'   => $prefix . 'service_price',
 				'type' => 'text',
+			),
+			array(
+				'name' => 'Background image',
+				'desc' => 'Chose a background to chose',
+				'id'   => $prefix . 'service_icon',
+				'type' => 'select',
+				'options'=> array(
+					array('name'=>'Style Static','value'=>'services__bg_stat'),
+					array('name'=>'Style Idea','value'=>'services__bg_idea'),
+					array('name'=>'Style Internet','value'=>'services__bg_internet'),
+					array('name'=>'Style Info','value'=>'services__bg_info'),
+					array('name'=>'Style Busy','value'=>'services__bg_busy'),
+					array('name'=>'Style Target','value'=>'services__bg_target')
+				)
 			),
 		)
 	);
