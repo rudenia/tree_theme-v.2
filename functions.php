@@ -374,12 +374,12 @@ function aletheme_metaboxes($meta_boxes) {
 				'id'   => $prefix . 'service_icon',
 				'type' => 'select',
 				'options'=> array(
-					array('name'=>'Style Static','value'=>'services__bg_stat'),
-					array('name'=>'Style Idea','value'=>'services__bg_idea'),
-					array('name'=>'Style Internet','value'=>'services__bg_internet'),
-					array('name'=>'Style Info','value'=>'services__bg_info'),
-					array('name'=>'Style Busy','value'=>'services__bg_busy'),
-					array('name'=>'Style Target','value'=>'services__bg_target')
+					array('name'=>'Style Static','value'=>'stat'),
+					array('name'=>'Style Idea','value'=>'idea'),
+					array('name'=>'Style Internet','value'=>'internet'),
+					array('name'=>'Style Info','value'=>'info'),
+					array('name'=>'Style Busy','value'=>'busy'),
+					array('name'=>'Style Target','value'=>'target')
 				)
 			),
 		)
