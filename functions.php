@@ -309,8 +309,17 @@ function tree_theme_register_custom_post_type () {
 		'service-type',
 		'service',
 		array(
-			'label' => __( 'Service Type' ),
+			'label' => esc_html__( 'Service Type' ),
 			'rewrite' => array( 'slug' => 'service-type' ),
+			'hierarchical' => true,
+		)
+	);
+	register_taxonomy(
+		'news-category',
+		'news',
+		array(
+			'label' => esc_html__( 'News Category' ),
+			'rewrite' => array( 'slug' => 'news-category' ),
 			'hierarchical' => true,
 		)
 	);
