@@ -21,7 +21,7 @@ get_header();
 					<?php the_title() ?>
 				</h1>
 				<ul class="tags-list">
-                    <?php $news_categories = wp_get_post_terms(get_the_ID(),'news-category', );
+                    <?php $news_categories = wp_get_post_terms(get_the_ID(),'news-category');
 					foreach ($news_categories as $category) { ?>
 						<li><a href="<?php echo get_term_link($category) ?>"><?php echo $category -> name; ?></a></li>
 					<?php } ?>
@@ -42,7 +42,7 @@ get_header();
 						<ul class="social">
 							<li class="social__item">
 								<span>Vk</span>
-								<a data-social="vkontakte" class="social__icon social__icon_vk" href="#">
+								<a data-social="vkontakte" class="social__icon social__icon_vk" href="<?php echo tree_theme_get_share('vk'); ?>">
 									<svg  width="21" height="18">
 										<use xlink:href="#vk"/>
 									</svg>
@@ -50,7 +50,7 @@ get_header();
 							</li>
 							<li class="social__item">
 								<span>Fb</span>
-								<a data-social="facebook" class="social__icon social__icon_fb" href="#">
+								<a data-social="facebook" class="social__icon social__icon_fb" href="<?php echo tree_theme_get_share('fb'); ?>">
 									<svg  width="14" height="17">
 										<use xlink:href="#facebook"/>
 									</svg>
@@ -58,7 +58,7 @@ get_header();
 							</li>
 							<li class="social__item">
 								<span>Tw</span>
-								<a data-social="twitter" class="social__icon social__icon_tw" href="#">
+								<a data-social="twitter" class="social__icon social__icon_tw" href="<?php echo tree_theme_get_share('twi'); ?>">
 									<svg  width="18" height="15">
 										<use xlink:href="#twitter"/>
 									</svg>

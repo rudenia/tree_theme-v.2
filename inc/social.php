@@ -1,5 +1,5 @@
 <?php
-function ale_get_share($type = 'fb', $permalink = false, $title = false) {
+function tree_theme_get_share($type = 'fb', $permalink = false, $title = false) {
 	if (!$permalink) {
 		$permalink = get_permalink();
 	}
@@ -14,7 +14,7 @@ function ale_get_share($type = 'fb', $permalink = false, $title = false) {
 			return 'http://www.facebook.com/sharer.php?u=' . $permalink . '&t=' . $title;
 			break;
 		case 'vk':
-			return 'http://www.vk.com/share.php?url=' . $permalink . '&title=' . $title . '&comment=' .get_the_content() ;
+			return 'http://www.vk.com/share.php?url=' . $permalink . '&title=' . $title . '&comment=';// .get_the_content() ;
 			break;
 		default:
 			return '';

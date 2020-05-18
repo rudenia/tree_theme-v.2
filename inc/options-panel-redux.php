@@ -587,6 +587,27 @@
 			),
 		)
 	) );
+	Redux::setSection( $opt_name, array(
+		'title'            => esc_html__( 'News', 'tree_theme' ),
+		'id'               => 'news_posttype',
+		'subsection'       => true,
+		'customizer_width' => '450px',
+		'desc'             => esc_html__( 'Data for News Page', 'tree_theme' ),
+		'fields'           => array(
+			array(
+				'id'        => 'news_title1',
+				'type'      => 'text',
+				'title'     => esc_html__( 'Title (First part)', 'tree_theme' ),
+				'default'   => 'Актуальные',
+			),
+			array(
+				'id'        => 'news_title2',
+				'type'      => 'text',
+				'title'     => esc_html__( 'Title (Second part)', 'tree_theme' ),
+				'default'   => 'Новости',
+			),
+		)
+	) );
 
     
 /*        

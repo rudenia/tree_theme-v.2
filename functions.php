@@ -87,6 +87,7 @@ if ( ! function_exists( 'tree_theme_setup' ) ) :
 		add_image_size( 'service-thumb', 1170, 635, true );
 		add_image_size( 'service-thumb', 1170, 554, true );
 		add_image_size( 'feature-thumb', 438, 455, true );
+		add_image_size( 'news-thumb', 733, 476, true );
 	}
 endif;
 add_action( 'after_setup_theme', 'tree_theme_setup' );
@@ -170,6 +171,11 @@ require get_template_directory() . '/inc/breadcrumbs.php';
  * Setting for Metaboxes
  */
 require get_template_directory() . '/inc/metaboxes.php';
+
+/**
+ * Setting for Social Share Function
+ */
+require get_template_directory() . '/inc/social.php';
 
 /**
  * Enqueue scripts and styles.
