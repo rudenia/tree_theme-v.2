@@ -198,6 +198,10 @@ global $tree_theme_options;
                             $current_post_type = get_post_type(get_the_ID());
                             $post_type_object = get_post_type_object($current_post_type);
                             echo $post_type_object->labels->singular_name;
+                        } else if (is_tax()){
+	                        $current_post_type = get_post_type(get_the_ID());
+	                        $post_type_object = get_post_type_object($current_post_type);
+	                        echo $post_type_object->labels->name;
                         } else {
                             echo wp_title('');
                         } ?></h1>

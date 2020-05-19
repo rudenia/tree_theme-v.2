@@ -37,7 +37,7 @@ global $tree_theme_options;
 								<svg width="13" height="13">
 									<use xlink:href="#time"/>
 								</svg>
-								<p class="add-time__date"><?php echo get_the_date(); ?>></p>
+								<p class="add-time__date"><?php echo get_the_date(); ?></p>
 							</div>
 							<div class="rate"></div>
 							<div class="share">
@@ -50,7 +50,7 @@ global $tree_theme_options;
 								<ul class="social">
 									<li class="social__item">
 										<span>Vk</span>
-										<a data-social="vkontakte" class="social__icon social__icon_vk" href="<?php echo tree_theme_get_share('vk', get_the_permalink(), get_the_title()); ?>">
+										<a data-social="vkontakte" onclick="window.open(this.href, 'Share on Vk', 'width=600,height=300'); return false" class="social__icon social__icon_vk" href="<?php echo tree_theme_get_share('vk', get_the_permalink(), get_the_title()); ?>">
 											<svg  width="21" height="18">
 												<use xlink:href="#vk"/>
 											</svg>
@@ -58,7 +58,7 @@ global $tree_theme_options;
 									</li>
 									<li class="social__item">
 										<span>Fb</span>
-										<a data-social="facebook" class="social__icon social__icon_fb" href="<?php echo tree_theme_get_share('fb', get_the_permalink(), get_the_title()); ?>">
+										<a data-social="facebook" onclick="window.open(this.href, 'Share on Facebook', 'width=600,height=300'); return false" class="social__icon social__icon_fb" href="<?php echo tree_theme_get_share('fb', get_the_permalink(), get_the_title()); ?>">
 											<svg  width="14" height="17">
 												<use xlink:href="#facebook"/>
 											</svg>
@@ -66,7 +66,7 @@ global $tree_theme_options;
 									</li>
 									<li class="social__item">
 										<span>Tw</span>
-										<a data-social="twitter" class="social__icon social__icon_tw" href="<?php echo tree_theme_get_share('twi', get_the_permalink(), get_the_title()); ?>">
+										<a data-social="twitter" onclick="window.open(this.href, 'Share on Twitter', 'width=600,height=300'); return false" class="social__icon social__icon_tw" href="<?php echo tree_theme_get_share('twi', get_the_permalink(), get_the_title()); ?>">
 											<svg  width="18" height="15">
 												<use xlink:href="#twitter"/>
 											</svg>
@@ -121,24 +121,6 @@ global $tree_theme_options;
 						</div>
 					</nav>
 				<?php } ?>
-
-
-
-<!--
-			<nav class="pagination">-->
-<!--					<div class="nav-links">-->
-<!--						<a href="#" class="prev page-numbers"></a>-->
-<!--						<a href="#" class=" page-numbers">1</a>-->
-<!--						<span href="#" class="current page-numbers">2</span>-->
-<!--						<a href="#" class="page-numbers">3</a>-->
-<!--						<a href="#" class="page-numbers">4</a>-->
-<!--						<a href="#" class="page-numbers">5</a>-->
-<!--						<span class="page-numbers page-break">...</span>-->
-<!--						<a href="#" class=" page-numbers">7</a>-->
-<!--						<a href="#" class="next page-numbers"></a>-->
-<!--					</div>-->
-<!--				</nav>-->
-
 			</div>
 
 			<?php get_sidebar(); ?>

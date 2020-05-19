@@ -606,6 +606,18 @@
 				'title'     => esc_html__( 'Title (Second part)', 'tree_theme' ),
 				'default'   => 'Новости',
 			),
+			array(
+				'id'        => 'news_category-title',
+				'type'      => 'text',
+				'title'     => esc_html__( 'Title for news category', 'tree_theme' ),
+				'default'   => 'Категория',
+			),
+			array(
+				'id'        => 'news_posts',
+				'type'      => 'text',
+				'title'     => esc_html__( 'Specify the count of news per page', 'tree_theme' ),
+				'default'   => '4',
+			),
 		)
 	) );
 

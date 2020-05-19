@@ -107,23 +107,6 @@ function tree_theme_content_width() {
 }
 add_action( 'after_setup_theme', 'tree_theme_content_width', 0 );
 
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function tree_theme_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'tree_theme' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'tree_theme' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'tree_theme_widgets_init' );
 
 /**
  * Implement the Custom Header feature.
@@ -178,6 +161,12 @@ require get_template_directory() . '/inc/metaboxes.php';
 require get_template_directory() . '/inc/social.php';
 
 /**
+ * Setting for Widgets
+ */
+require get_template_directory() . '/inc/widgets/widgets.php';
+require get_template_directory() . '/inc/widgets/widget-about.php';
+
+/**
  * Enqueue scripts and styles.
  */
 function tree_theme_scripts() {
@@ -188,7 +177,6 @@ function tree_theme_scripts() {
 
 	//Подключение JS
 	wp_enqueue_script('jquery3.1.1','http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js');
-	wp_enqueue_script( 'goodshare','https://cdn.jsdelivr.net/npm/goodshare.js@4/goodshare.min.js', array(), '', true);
 
 	wp_enqueue_script( 'tree_theme-vendor', get_template_directory_uri() . '/assets/js/vendor.min.js', array(), '1.0.0', true );
 	wp_enqueue_script( 'tree_theme-common', get_template_directory_uri() . '/assets/js/common.min.js', array(), '1.0.0', true );
@@ -429,10 +417,15 @@ function aletheme_metaboxes($meta_boxes) {
 function tree_theme_posts_per_archivepage( $query ) {
 	global $tree_theme_options;
 	$posts_per_page_testy = -1;
+	$posts_per_page_news = -1;
 	if ($tree_theme_options['testimonial_posts']){ $posts_per_page_testy = $tree_theme_options['testimonial_posts']; }
+	if ($tree_theme_options['news_posts']){ $posts_per_page_news = $tree_theme_options['news_posts']; }
 
 	if ( is_post_type_archive('testimonial') ) {
 		$query->set( 'posts_per_page', $posts_per_page_testy );
+	}
+	if ( is_post_type_archive('news') ) {
+		$query->set( 'posts_per_page', $posts_per_page_news );
 	}
 }
 add_action( 'pre_get_posts', 'tree_theme_posts_per_archivepage' );
